@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "123456789",
+    "project_id": "clipik-app",
+    "storage_bucket": "clipik-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789:android:abcdef123456",
+        "android_client_info": {
+          "package_name": "com.victor.clipikv2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDummy_Key_For_Development_Only"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-5464183006468136~2110566044"
+    }
+  ],
+  "configuration_version": "1"
+}

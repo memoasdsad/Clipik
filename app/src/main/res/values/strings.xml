@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Clipik</string>
+    
+    <!-- Main Activity -->
+    <string name="welcome_title">Bem-vindo ao Clipik</string>
+    <string name="welcome_subtitle">Editor de vídeo automático e rápido</string>
+    <string name="select_video">Selecionar Vídeo</string>
+    <string name="select_video_description">Escolha um vídeo da sua galeria para começar</string>
+    
+    <!-- Editor Activity -->
+    <string name="create_status">Criar Status (30s)</string>
+    <string name="create_reels">Criar Reels (60s)</string>
+    <string name="timeline">Timeline</string>
+    <string name="preview">Preview</string>
+    
+    <!-- Export Activity -->
+    <string name="exporting">Exportando...</string>
+    <string name="export_progress">Progresso da exportação</string>
+    <string name="export_complete">Exportação concluída!</string>
+    <string name="export_failed">Falha na exportação</string>
+    <string name="share_video">Compartilhar Vídeo</string>
+    <string name="save_to_gallery">Salvar na Galeria</string>
+    
+    <!-- Permissions -->
+    <string name="permission_storage_title">Permissão de Armazenamento</string>
+    <string name="permission_storage_message">O Clipik precisa acessar seus vídeos para funcionar</string>
+    <string name="permission_denied">Permissão negada</string>
+    <string name="grant_permission">Conceder Permissão</string>
+    
+    <!-- Errors -->
+    <string name="error_video_load">Erro ao carregar vídeo</string>
+    <string name="error_video_process">Erro ao processar vídeo</string>
+    <string name="error_no_video_selected">Nenhum vídeo selecionado</string>
+    
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="retry">Tentar Novamente</string>
+    <string name="loading">Carregando...</string>
+    
+    <!-- AdMob -->
+    <string name="ad_banner_unit_id">ca-app-pub-5464183006468136~2110566044</string> <!-- User's Banner ID -->
+    <string name="ad_interstitial_unit_id">ca-app-pub-3940256099942544/1033173712</string> <!-- Test Interstitial ID -->
+</resources>
