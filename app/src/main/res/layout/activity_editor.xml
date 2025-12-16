@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activities.EditorActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Clipik Editor"
+        app:titleTextColor="@color/text_primary" />
+
+    <!-- Video Player Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/playerContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/player_height"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:use_controller="true"
+            app:show_buffering="when_playing"
+            app:controller_layout_id="@layout/custom_player_controls" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Timeline Container -->
+    <LinearLayout
+        android:id="@+id/timelineContainer"
+        style="@style/TimelineContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/timeline_height"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerContainer">
+
+        <!-- Timeline Title -->
+        <TextView
+            style="@style/TextBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="@string/timeline"
+            android:textColor="@color/text_secondary" />
+
+        <!-- Timeline RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timeline_thumbnail_height"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_timeline_thumbnail" />
+
+        <!-- Timeline Cursor -->
+        <View
+            android:id="@+id/timelineCursor"
+            android:layout_width="@dimen/timeline_cursor_width"
+            android:layout_height="@dimen/timeline_thumbnail_height"
+            android:layout_marginTop="-@dimen/timeline_thumbnail_height"
+            android:background="@color/timeline_cursor"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <!-- Action Buttons Container -->
+    <LinearLayout
+        android:id="@+id/actionButtonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_large"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timelineContainer">
+
+        <!-- Create Status Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateStatus"
+            style="@style/ButtonPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_weight="1"
+            android:text="@string/create_status"
+            app:icon="@drawable/ic_status"
+            app:iconGravity="top" />
+
+        <!-- Create Reels Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateReels"
+            style="@style/ButtonSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_weight="1"
+            android:text="@string/create_reels"
+            app:icon="@drawable/ic_reels"
+            app:iconGravity="top" />
+
+    </LinearLayout>
+
+    <!-- Progress Bar (Hidden by default) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/ProgressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionButtonsContainer" />
+
+    <!-- AdMob Banner -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:adSize="BANNER"
+        app:adUnitId="@string/ad_banner_unit_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

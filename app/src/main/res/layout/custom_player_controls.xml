@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/player_controls_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_medium">
+
+    <!-- Play/Pause Button -->
+    <ImageButton
+        android:id="@id/exo_play_pause"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_play_arrow"
+        android:tint="@color/white" />
+
+    <!-- Current Time -->
+    <TextView
+        android:id="@id/exo_position"
+        style="@style/TextBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small" />
+
+    <!-- Progress Bar -->
+    <androidx.media3.ui.DefaultTimeBar
+        android:id="@id/exo_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_weight="1"
+        app:played_color="@color/primary"
+        app:scrubber_color="@color/primary"
+        app:unplayed_color="@color/surface_light" />
+
+    <!-- Duration -->
+    <TextView
+        android:id="@id/exo_duration"
+        style="@style/TextBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small" />
+
+    <!-- Fullscreen Button -->
+    <ImageButton
+        android:id="@id/exo_fullscreen"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_fullscreen"
+        android:tint="@color/white" />
+
+</LinearLayout>
