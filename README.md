@@ -68,33 +68,69 @@ app/
 ## 🔧 Como Compilar e Executar
 
 ### Pré-requisitos
-- Android Studio Arctic Fox ou superior
-- JDK 11 ou superior
-- Android SDK 34
-- Dispositivo/emulador com Android 8+ (API 26+)
+- **Android Studio**: Hedgehog (2023.1.1) ou superior
+- **JDK**: 17 ou superior (recomendado JDK 17)
+- **Android SDK**: API 35 (Android 14)
+- **Gradle**: 8.5+ (incluído no projeto)
+- **Dispositivo/emulador**: Android 8+ (API 26+)
 
 ### Passos
 
 1. **Clone o repositório**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/memoasdsad/Clipik.git
    cd Clipik
    ```
 
-2. **Abra no Android Studio**:
-   - File → Open → Selecione a pasta do projeto
+2. **Configure o SDK**:
+   - Copie `local.properties.template` para `local.properties`
+   - Edite `local.properties` e configure o caminho do seu Android SDK:
+   ```properties
+   sdk.dir=/caminho/para/seu/android/sdk
+   ```
 
-3. **Configure o SDK**:
-   - Certifique-se de que o Android SDK 34 está instalado
-   - Configure o `local.properties` com o caminho do SDK
+3. **Abra no Android Studio**:
+   - File → Open → Selecione a pasta do projeto
+   - Aguarde a indexação dos arquivos
 
 4. **Sincronize o projeto**:
    - Clique em "Sync Now" quando solicitado
-   - Aguarde o download das dependências
+   - Aguarde o download das dependências (pode demorar alguns minutos)
+   - Se houver erro de compatibilidade Java/Gradle, veja a seção "Solução de Problemas"
 
 5. **Execute o app**:
    - Conecte um dispositivo Android ou inicie um emulador
    - Clique em "Run" (▶️) ou pressione Shift+F10
+
+### ⚠️ Solução de Problemas
+
+#### Erro: "Incompatible Java and Gradle"
+Se aparecer erro de incompatibilidade entre Java 21 e Gradle:
+
+1. **Opção 1 - Usar JDK 17 (Recomendado)**:
+   - File → Settings → Build → Build Tools → Gradle
+   - Gradle JDK: Selecione JDK 17
+   - Apply → OK
+
+2. **Opção 2 - Atualizar Gradle**:
+   - O projeto já está configurado com Gradle 8.5
+   - Se ainda houver problemas, execute:
+   ```bash
+   ./gradlew wrapper --gradle-version=8.5
+   ```
+
+#### Erro: "SDK not found"
+```bash
+# Configure o caminho correto no local.properties
+echo "sdk.dir=/caminho/para/android/sdk" > local.properties
+```
+
+#### Erro: "Build failed"
+```bash
+# Limpe e recompile
+./gradlew clean
+./gradlew build
+```
 
 ## 📋 Dependências Principais
 
