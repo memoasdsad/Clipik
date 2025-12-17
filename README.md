@@ -69,9 +69,9 @@ app/
 
 ### Pré-requisitos
 - **Android Studio**: Hedgehog (2023.1.1) ou superior
-- **JDK**: 17 ou superior (recomendado JDK 17)
+- **JDK**: 21 (obrigatório para Google Play Store)
 - **Android SDK**: API 35 (Android 14)
-- **Gradle**: 8.5+ (incluído no projeto)
+- **Gradle**: 8.7+ (incluído no projeto)
 - **Dispositivo/emulador**: Android 8+ (API 26+)
 
 ### Passos
@@ -104,15 +104,15 @@ app/
 
 ### ⚠️ Solução de Problemas
 
-#### 🚨 **Erro: "Incompatible Java 21 and Gradle"**
+#### 🚨 **Configuração para Google Play Store (JDK 21)**
 
-**SOLUÇÃO RÁPIDA:**
+**CONFIGURAÇÃO OBRIGATÓRIA:**
 1. **File → Settings → Build Tools → Gradle**
-2. **Gradle JDK: Selecione JDK 17** (NÃO use JDK 21)
+2. **Gradle JDK: Selecione JDK 21** (obrigatório para Play Store)
 3. **Apply → OK**
 4. **File → Invalidate Caches and Restart**
 
-**SOLUÇÃO AUTOMÁTICA:**
+**CONFIGURAÇÃO AUTOMÁTICA:**
 ```bash
 # Linux/macOS
 ./fix_gradle.sh
@@ -121,7 +121,7 @@ app/
 fix_gradle.bat
 ```
 
-📋 **[Guia Completo de Soluções](SOLUCAO_PROBLEMAS.md)**
+📋 **[Guia de Publicação Play Store](PUBLICACAO_PLAY_STORE.md)**
 
 #### Outros Problemas Comuns
 
