@@ -104,32 +104,35 @@ app/
 
 ### ⚠️ Solução de Problemas
 
-#### Erro: "Incompatible Java and Gradle"
-Se aparecer erro de incompatibilidade entre Java 21 e Gradle:
+#### 🚨 **Erro: "Incompatible Java 21 and Gradle"**
 
-1. **Opção 1 - Usar JDK 17 (Recomendado)**:
-   - File → Settings → Build → Build Tools → Gradle
-   - Gradle JDK: Selecione JDK 17
-   - Apply → OK
+**SOLUÇÃO RÁPIDA:**
+1. **File → Settings → Build Tools → Gradle**
+2. **Gradle JDK: Selecione JDK 17** (NÃO use JDK 21)
+3. **Apply → OK**
+4. **File → Invalidate Caches and Restart**
 
-2. **Opção 2 - Atualizar Gradle**:
-   - O projeto já está configurado com Gradle 8.5
-   - Se ainda houver problemas, execute:
-   ```bash
-   ./gradlew wrapper --gradle-version=8.5
-   ```
-
-#### Erro: "SDK not found"
+**SOLUÇÃO AUTOMÁTICA:**
 ```bash
-# Configure o caminho correto no local.properties
+# Linux/macOS
+./fix_gradle.sh
+
+# Windows
+fix_gradle.bat
+```
+
+📋 **[Guia Completo de Soluções](SOLUCAO_PROBLEMAS.md)**
+
+#### Outros Problemas Comuns
+
+**SDK not found:**
+```bash
 echo "sdk.dir=/caminho/para/android/sdk" > local.properties
 ```
 
-#### Erro: "Build failed"
+**Build failed:**
 ```bash
-# Limpe e recompile
-./gradlew clean
-./gradlew build
+./gradlew clean build
 ```
 
 ## 📋 Dependências Principais
